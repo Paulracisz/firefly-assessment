@@ -24,6 +24,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 
@@ -39,7 +40,7 @@ body {
     background-color: var(--main-bg-color);
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-width: 100vw;
     grid-template-columns: repeat(4, 65px);
     grid-template-rows: minmax(55px, auto)repeat(5, 65px);
@@ -56,6 +57,11 @@ body {
     color: var(--button-number-color);
     margin: 2.5px;
 } 
+
+.current-operand {
+    border-bottom: 1px solid grey;
+    margin: 5px;
+}
 
 #operator {
     background-color: var(--operator-color);
@@ -74,5 +80,16 @@ body {
     background-color: var(--operator-color);
     color: var(--main-bg-color);
     border: none;
+    border-radius: 34%;
+    padding: 15px;
+    grid-row: span 2;
 }
 
+#zero {
+    grid-column: span 2;
+    border-radius: 34%;
+}
+
+.output {
+    grid-column: 1 / -1;
+}
