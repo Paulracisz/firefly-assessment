@@ -58,16 +58,11 @@ body {
     margin: 2.5px;
 } 
 
-.current-operand {
-    border-bottom: 1px solid grey;
-    margin: 5px;
-}
 
 #operator {
     background-color: var(--operator-color);
     color: var(--main-bg-color);
     border: none;
-    font-weight: bold;
     text-shadow: none;
 }
 
@@ -92,4 +87,26 @@ body {
 
 .output {
     grid-column: 1 / -1;
+    border-bottom: 1px solid grey;
+    margin: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 120px;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: var(--number-color);
+    font-size: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.output .current-operand {
+    color: var(--number-color);
+    font-size: 3rem;
+    font-family: 'Open Sans', sans-serif;
 }
