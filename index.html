@@ -5,16 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="./calculator.js" defer></script>
   </head>
   <body>
     <main role="main">
-      <div id="big-box">
-          <div id="header"></div>
-          <h1 id="interface">0</h1>
-          <hr>
+        <div id="header"></div>
+      <div class="calculator-grid">
+          <div class="output">
+            <div class="previous-operand"></div>
+            <div class="current-operand"></div>
+          </div>
+          <button id="c">C</button>
+          <button id="operator">÷</button>
+          <button id="operator">x</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button id="operator">-</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button id="operator">+</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button id="span-two">=</button>
+          <button>0</button>
+          <button>.</button>
       </div>
-      <link rel="stylesheet" type="text/css" href="styles.css" />
-      <script type="text/javascript" src="./calculator.js"></script>
     </main>
   </body>
 </html>

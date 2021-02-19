@@ -1,10 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
     --main-bg-color: rgb(46,57,138);
     --header-bg-color: rgb(86,89,166);
+    --button-number-color: rgb(135,141,188);
     --number-color: rgb(171,175,208);
+    --main-font: font-family: 'Open Sans', sans-serif;
+    --operator-color: rgb(250,219,75)
 }
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+
 
 html {
     background-color: var(--main-bg-color);
@@ -12,6 +23,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 
@@ -22,24 +34,45 @@ body {
     box-shadow: 3px 5px 8px black;
 }
 
-#big-box {
+.calculator-grid {
+    margin-top: 15vh;
     background-color: var(--main-bg-color);
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: minmax(55px, auto)repeat(5, 65px);
 }
 
-#interface {
-    color: var(--number-color);
-    margin-left: 80vw;
-    font-size: 80px;
-    margin-bottom: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-hr {
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
     border: 1px solid grey;
-    border-radius: 10%;
-    width: 85vw;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--main-bg-color);
+    outline: none;
+    color: var(--button-number-color);
+    margin: 2.5px;
+} 
+
+#operator {
+    background-color: var(--operator-color);
+    color: var(--main-bg-color);
+    border: none;
+    font-weight: bold;
+    text-shadow: none;
 }
+
+#c {
+    border: 2px solid var(--operator-color);
+    padding: 8px;
+}
+
+#span-two {
+    background-color: var(--operator-color);
+    color: var(--main-bg-color);
+    border: none;
+}
+
