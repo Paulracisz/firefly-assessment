@@ -92,6 +92,8 @@ const equalsButton = document.querySelector('[data-equals]')
 const clearButton = document.querySelector('[data-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
+const hamburgerMenuElement = document.getElementsByClassName('hamburger-menu')
+console.log(hamburgerMenuElement)
 
 const calculator = new Calculator(previousOperandTextElement, 
     currentOperandTextElement)
@@ -120,3 +122,14 @@ clearButton.addEventListener('click', button => {
     calculator.updateDisplay()
 })
 
+hamburgerMenuElement[0].addEventListener('click', e => {
+    const displayMenuElement = document.getElementById('modal')
+    if (displayMenuElement.className === 'no-display') {
+        displayMenuElement.classList.remove('no-display')
+        displayMenuElement.classList.add('show-modal')
+    }
+    else {
+        displayMenuElement.classList.remove('show-modal')
+        displayMenuElement.classList.add('no-display')
+    }
+})

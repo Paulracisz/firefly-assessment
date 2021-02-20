@@ -58,6 +58,87 @@ body {
     margin: 2.5px;
 } 
 
+.no-display{
+    display: flex;
+    position: fixed;
+    transition: 1s;
+    top: -100vh;
+    width: 100vw;
+    height: -25vh;
+    border-radius: 0px;
+    justify-content: center;
+  }
+
+  .show-modal > p {
+      color: white;
+      font-size: 1.5em;
+  }
+
+  .show-modal{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    width: 200px;
+    justify-content: center;
+    width: 100vw;
+    height: 25vh;
+    top: 0;
+    border-radius: 0px;
+    background: rgba(0,0,0,0.5);
+    transition: 1s;
+  }
+
+.hamburger-menu{
+    position: relative;
+    top: 60%;
+    left: 10px;
+    width: 55px;
+    height: 30px;
+    z-index: 10;
+  }
+
+  @media only screen and (orientation: landscape) {
+
+.hamburger-menu {
+    top: 30%;
+}
+.show-modal {
+    justify-content: space-around;
+    flex-direction: row;
+}
+}
+
+  .one {
+    position: absolute;
+    left: 10px;
+    transition: 1s;
+  }
+  
+  .two {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: 1s;
+  }
+  
+  .three {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    transition: 1s;
+  }
+
+  .hamburger{
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 9;
+  }
+
 
 #operator {
     background-color: var(--operator-color);
@@ -75,14 +156,14 @@ body {
     background-color: var(--operator-color);
     color: var(--main-bg-color);
     border: none;
-    border-radius: 34%;
+    border-radius: 500px;
     padding: 15px;
     grid-row: span 2;
 }
 
 #zero {
     grid-column: span 2;
-    border-radius: 34%;
+    border-radius: 500px;
 }
 
 .output {
