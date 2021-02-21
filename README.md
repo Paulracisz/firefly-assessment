@@ -5,6 +5,8 @@ The calculator uses eventlisters to dynamically udpate the display div that cont
 different operators, will compute the operands. It is also capable of completing chain operations. The hamburger menu in the top left corner,
 is expandable to reveal menu items. This project is best viewed in mobile mode.
 
+<a href="https://paulracisz.github.io/firefly-assessment/">Click here to view the deployed page.</a>
+
 <h1>How to Install </h1>
 <ol>
   <li>Clone the repository or fork it and clone it if you wish.</li>
