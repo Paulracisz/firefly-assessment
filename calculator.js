@@ -93,7 +93,7 @@ const clearButton = document.querySelector('[data-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 const hamburgerMenuElement = document.getElementsByClassName('hamburger-menu')
-console.log(hamburgerMenuElement)
+const closeMenuElement = document.getElementsByClassName
 
 const calculator = new Calculator(previousOperandTextElement, 
     currentOperandTextElement)
@@ -133,3 +133,5 @@ hamburgerMenuElement[0].addEventListener('click', e => {
         displayMenuElement.classList.add('no-display')
     }
 })
+
+
