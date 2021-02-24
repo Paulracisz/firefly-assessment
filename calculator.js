@@ -93,7 +93,9 @@ const clearButton = document.querySelector('[data-clear]')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 const hamburgerMenuElement = document.getElementsByClassName('hamburger-menu')
-const closeMenuElement = document.getElementsByClassName
+const fontsModal = document.getElementsByClassName('fonts-menu')
+const closeMenu = document.getElementById('close')
+const fontMenuContainer = document.getElementById('modal-fonts')
 
 const calculator = new Calculator(previousOperandTextElement, 
     currentOperandTextElement)
@@ -134,4 +136,65 @@ hamburgerMenuElement[0].addEventListener('click', e => {
     }
 })
 
+fontsModal[0].addEventListener('click', e => {
+    const displayMenuElement = document.getElementById('modal-fonts')
+    if (displayMenuElement.className === 'no-display') {
+        displayMenuElement.classList.remove('no-display')
+        displayMenuElement.classList.add('show-modal-fonts')
+    }
+    else {
+        displayMenuElement.classList.remove('show-modal-fonts')
+        displayMenuElement.classList.add('no-display')
+    }
+})
 
+closeMenu.addEventListener('click', e => {
+    const displayMenuElement = document.getElementById('modal-fonts')
+    displayMenuElement.classList.remove('show-modal-fonts')
+    displayMenuElement.classList.add('no-display')
+})
+
+fontMenuContainer.addEventListener('click', e => {
+    const r = document.querySelector(':root')
+    // e.path[0] is the path of the event that leads to the
+    // element that was clicked.
+    if (e.path[0].id === "times") {
+        r.style.setProperty('--main-font', '"Times New Roman"')
+    }
+    if (e.path[0].id === "default") {
+        r.style.setProperty('--main-font', '"Open Sans"')
+    }
+    if (e.path[0].id === "arial") {
+        r.style.setProperty('--main-font', '"Arial"')
+    }
+    if (e.path[0].id === "default-theme") {
+        r.style.setProperty('--main-bg-color', 'rgb(46,57,138)')
+        r.style.setProperty('--header-bg-color', 'rgb(86,89,166)')
+        r.style.setProperty('--button-number-color', 'rgb(135,141,188)')
+        r.style.setProperty('--operator-color', 'rgb(250,219,75)')
+        r.style.setProperty('--number-color', 'rgb(171,175,208)')
+    }
+    if (e.path[0].id === "dark") {
+        r.style.setProperty('--main-bg-color', 'black')
+        r.style.setProperty('--header-bg-color', 'grey')
+        r.style.setProperty('--button-number-color', 'white')
+        r.style.setProperty('--operator-color', 'grey')
+        r.style.setProperty('--number-color', 'white')
+    }
+    if (e.path[0].id === "pink") {
+        r.style.setProperty('--main-bg-color', 'pink')
+        r.style.setProperty('--header-bg-color', 'hotpink')
+        r.style.setProperty('--button-number-color', 'white')
+        r.style.setProperty('--operator-color', 'white')
+        r.style.setProperty('--number-color', 'white')
+    }
+})
+
+// console.log(fontMenuElement)
+// fontMenuElement.addEventListener('click', e => {
+//     const r = document.querySelector(':root')
+//     if (fontMenuElement.id === "") return
+//     if (fontMenuElement.id === "times") {
+//     r.style.setProperty('--main-font','"Times New Roman"')
+//     }
+// })
