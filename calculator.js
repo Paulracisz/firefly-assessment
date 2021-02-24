@@ -52,6 +52,10 @@ class Calculator {
             return 
         }
         this.currentOperand = computation
+        historyArray.push(`${prev} ${this.operation} ${current} = ${computation} </br>`)
+        let historyText = historyArray.join("")
+        document.getElementById('history-text').innerHTML = historyText
+        console.log(historyArray)
         this.operation = undefined
         this.previousOperand = ''
 
@@ -96,6 +100,9 @@ const hamburgerMenuElement = document.getElementsByClassName('hamburger-menu')
 const fontsModal = document.getElementsByClassName('fonts-menu')
 const closeMenu = document.getElementById('close')
 const fontMenuContainer = document.getElementById('modal-fonts')
+const historyModal = document.getElementById('history-menu')
+const closeMenuHistory = document.getElementById('close-history')
+let historyArray = []
 
 const calculator = new Calculator(previousOperandTextElement, 
     currentOperandTextElement)
@@ -190,11 +197,15 @@ fontMenuContainer.addEventListener('click', e => {
     }
 })
 
-// console.log(fontMenuElement)
-// fontMenuElement.addEventListener('click', e => {
-//     const r = document.querySelector(':root')
-//     if (fontMenuElement.id === "") return
-//     if (fontMenuElement.id === "times") {
-//     r.style.setProperty('--main-font','"Times New Roman"')
-//     }
-// })
+
+historyModal.addEventListener('click', e => {
+    const displayMenuElement = document.getElementById('modal-history')
+    displayMenuElement.classList.remove('no-display')
+    displayMenuElement.classList.add('show-modal-fonts')
+})
+
+closeMenuHistory.addEventListener('click', e => {
+    const displayMenuElement = document.getElementById('modal-history')
+    displayMenuElement.classList.remove('show-modal-fonts')
+    displayMenuElement.classList.add('no-display')
+})
