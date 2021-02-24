@@ -55,7 +55,6 @@ class Calculator {
         historyArray.push(`${prev} ${this.operation} ${current} = ${computation} </br>`)
         let historyText = historyArray.join("")
         document.getElementById('history-text').innerHTML = historyText
-        console.log(historyArray)
         this.operation = undefined
         this.previousOperand = ''
 
