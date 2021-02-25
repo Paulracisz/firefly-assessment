@@ -33,10 +33,11 @@ body {
     height: 15vh;
     width: 100vw;
     box-shadow: 3px 5px 8px black;
+    border-bottom: 4px solid black;
+    
 }
 
 .calculator-grid {
-    margin-top: 15vh;
     background-color: var(--main-bg-color);
     display: grid;
     justify-content: center;
